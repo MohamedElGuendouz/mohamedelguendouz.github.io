@@ -1,7 +1,10 @@
-## [Designing software the ruthless way](https://nalexn.github.io/)
+Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync
+=============================
 
-Theme: [flexible-jekyll](https://github.com/artemsheludko/flexible-jekyll)
+A starter project for Jekyll.
 
-
-### License
-GNU General Public License v3.0
+# How to Use
+- Install [Jekyll](http://jekyllrb.com/), [NodeJs](http://nodejs.org/), [Yarn](https://yarnpkg.com/), [GulpJs](http://gulpjs.com/)
+- [Download](https://github.com/artemsheludko/Jekyll-Gulp-Sass-Autoprefixer-Imagemin-BrowserSync/archive/master.zip) Jekyll Project
+- Install modules: yarn
+- Run the project: gulp
