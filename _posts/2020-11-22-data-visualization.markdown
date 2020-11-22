@@ -9,43 +9,111 @@ sharing: true
 published: true
 img: clean_swiftui_01.jpg
 ---
-Can you imagine, UIKit is 11 years old! Ever since the release of the iOS SDK in 2008 we were building our apps with it. And throughout this time the developers were in a relentless search for the best architecture to use for their apps. It all started with **MVC**, but later we witnessed the rise of **MVP**, **MVVM**, **VIPER**, **RIBs**, and **VIP**.
+ In every project, the first step is to load data.  
+To read the CSV files we are the pandas function `read_csv()` :
 
 
-**Model**: a data container
+**Model**: Read a CSV file with pandas
 
-```swift
-struct Country {
-    let name: String
-}
+```python
+import pandas
+
+df = pandas.read_csv('data.csv') 
 ```
 
-**View**: a SwiftUI view
+**View**: Dropping unnecessary columns in a DataFrame
 
-```swift
-struct CountriesList: View {
-    
-    @ObservedObject var viewModel: ViewModel
-    
-    var body: some View {
-        List(viewModel.countries) { country in
-            Text(country.name)
-        }
-        .onAppear {
-            self.viewModel.loadCountries()
-        }
-    }
-}
+```python
+drop_columns = ['col1','col2']
+
+df.drop(drop_columns, inplace=True, axis=1)
+
+df = df.set_index('Identifier')
+
+df.set_index('Identifier', inplace=True)
 ```
 
-**ViewModel**: an `ObservableObject` that encapsulates the business logic and allows the `View` to observe changes of the state
+**View**: Changing the index of a DataFrame
 
-Since WebRepository takes URLSession as a constructor parameter, it is very easy to test it by [mocking the networking calls](https://github.com/nalexn/clean-architecture-swiftui/blob/master/UnitTests/NetworkMocking/RequestMocking.swift) with a custom `URLProtocol`
+```python
+df.get_dtype_counts()
+
+regex = r'^(\d{4})'
+
+extr = df['Date of Publication'].str.extract(r'^(\d{4})', expand=False)
+
+df['Date of Publication'] = pd.to_numeric(extr)
+```
+
+**View**: Using `.str()` methods to clean columns
+
+```python
+np.where(condition,
+then, else)
+
+pub = df['Place of Publication']
+
+london = pub.str.contains('London')
+
+london[:5]
+```
+
+**View**: Using the DataFrame.applymap() function to clean the entire dataset, element-wise
+
+```python
+university_towns = []
+
+with open('Datasets/university_towns.txt') as file:
+    for line in file:
+        if '[edit]' in line:
+            # Remember this `state` until the next is found
+            state = line
+        else:
+            # Otherwise, we have a city; keep `state` as last-seen
+            university_towns.append((state, line))
+
+university_towns[:5]
+
+towns_df = pd.DataFrame(university_towns, columns=['State', 'RegionName'])
+
+towns_df.head()
+ 
+def get_citystate(item):
+    if '(' in item:
+        return item[:item.find('(')]
+    elif '[' in item:
+        return item[:item.find('[')]
+    else:
+        return item
+
+towns_df = towns_df.applymap(get_citystate)
+
+towns_df.head()
+```
+
+**View**: Renaming columns to a more recognizable set of labels & Skipping unnecessary rows in a CSV file
+
+```python
+olympics_df = pd.read_csv('Datasets/olympics.csv', header=1)
+
+new_names =  {'Unnamed: 0': 'Country',
+              '? Summer': 'Summer Olympics',
+              '01 !': 'Gold',
+              '02 !': 'Silver',
+              '03 !': 'Bronze',
+              '? Winter': 'Winter Olympics',
+              '01 !.1': 'Gold.1',
+              '02 !.1': 'Silver.1',
+              '03 !.1': 'Bronze.1',
+              '? Games': '# Games',
+              '01 !.2': 'Gold.2',
+              '02 !.2': 'Silver.2',
+              '03 !.2': 'Bronze.2'}
+
+olympics_df.rename(columns=new_names,
+inplace=True)
+```
 
 # Final thoughts
 
 [The demo project](https://github.com/nalexn/clean-architecture-swiftui) now has **97% test coverage**, all thanks to the Clean Architecture's "dependency rule" and segregation of the app on multiple layers.
-
-It offers fully setup persistence layer with CoreData, deep linking from a Push Notification, and other non-trivial yet practical examples.
-
-<div style="max-width:800px; display: block; margin-left: auto; margin-right: auto;"><img src="https://github.com/nalexn/blob_files/blob/master/images/countries_preview.png?raw=true" alt="Diagram"/></div>
