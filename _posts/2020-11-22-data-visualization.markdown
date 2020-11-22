@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data Visualization"
-date: 2020-22-11 14:30:00 +0000
+date: "`r Sys.Date()`"
 description: "CNN, RNN, DEEP LEARNING ?"
 tags: [Machine Learning,Python,Model,swift,SwiftUI,Combine,design,pattern,redux,unidirectional,data,flow,model,state,management]
 comments: true
