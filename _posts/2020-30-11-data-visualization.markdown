@@ -40,22 +40,6 @@ struct CountriesList: View {
 
 **ViewModel**: an `ObservableObject` that encapsulates the business logic and allows the `View` to observe changes of the state
 
-```swift
-extension CountriesList {
-    class ViewModel: ObservableObject {
-        @Published private(set) var countries: [Country] = []
-        
-        private let service: WebService
-        
-        func loadCountries() {
-            service.getCountries { [weak self] result in
-                self?.countries = result.value ?? []
-            }
-        }
-    }
-}
-```
-
 Since WebRepository takes URLSession as a constructor parameter, it is very easy to test it by [mocking the networking calls](https://github.com/nalexn/clean-architecture-swiftui/blob/master/UnitTests/NetworkMocking/RequestMocking.swift) with a custom `URLProtocol`
 
 # Final thoughts
