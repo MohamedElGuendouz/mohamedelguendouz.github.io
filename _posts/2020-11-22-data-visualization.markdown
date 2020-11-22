@@ -7,7 +7,7 @@ tags: [Machine Learning,Python,Model,swift,SwiftUI,Combine,design,pattern,redux,
 comments: true
 sharing: true
 published: true
-img: clean_swiftui_01.jpg
+img: insight-2904292_1280.png
 ---
  In every project, the first step is to load data.  
 To read the CSV files we are the pandas function `read_csv()` :
