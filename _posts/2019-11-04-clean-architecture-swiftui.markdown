@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Clean Architecture for SwiftUI"
+title: "Machine Learning for Beginner"
 date: 2019-11-04 14:30:00 +0300
-description: "Are VIPER, RIBs, MVVM, VIP, or MVC suitable for a SwiftUI project?"
-tags: [MVVM,viewmodel,iOS,swift,SwiftUI,Combine,design,pattern,redux,unidirectional,data,flow,model,state,management]
+description: "CNN, RNN, DEEP LEARNING ?"
+tags: [Machine Learning,Python,Model,swift,SwiftUI,Combine,design,pattern,redux,unidirectional,data,flow,model,state,management]
 comments: true
 sharing: true
 published: true
