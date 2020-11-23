@@ -9,6 +9,8 @@ sharing: true
 published: true
 img: business-5475660_1280.jpg
 ---
+
+
  In every project, the first step is to load data.  
 To read the CSV files we are the pandas function `read_csv()` :
 
@@ -110,8 +112,7 @@ new_names =  {'Unnamed: 0': 'Country',
               '02 !.2': 'Silver.2',
               '03 !.2': 'Bronze.2'}
 
-olympics_df.rename(columns=new_names,
-inplace=True)
+olympics_df.rename(columns=new_names, inplace=True)
 ```
 
 # Final thoughts
