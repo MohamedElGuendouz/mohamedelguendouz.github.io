@@ -7,7 +7,7 @@ tags: [Machine Learning,Python,Model,Boltzmann,Netflix,Pandas,pattern,Torch,data
 comments: true
 sharing: true
 published: true
-img: post2.png
+img: netflixstreaming-2.jpg
 ---
 
 
