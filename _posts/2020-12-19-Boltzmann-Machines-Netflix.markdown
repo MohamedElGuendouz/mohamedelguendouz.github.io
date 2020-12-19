@@ -34,7 +34,7 @@ Par la suite, nous allons lire le datasets contenant les contenus provenant de N
 df = pd.read_csv("netflix_titles.csv",sep=",")
 df.head()
 ```
-![](https://mohamedelguendouz.github.io/melg.github.io/assets/img/post2_2.PNG/?raw=true)
+![](../assets/img/post2_2.PNG)
 
 # Final thoughts
 
