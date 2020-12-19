@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Boltzmann Machines"
+title: "Boltzmann Machines - Netflix"
 date: 2020-11-22 21:30:00 +0200
 description: "Boltzmann, Machine Learning, Movies"
 tags: [Machine Learning,Python,Model,Boltzmann,Netflix,Pandas,pattern,Torch,data]
