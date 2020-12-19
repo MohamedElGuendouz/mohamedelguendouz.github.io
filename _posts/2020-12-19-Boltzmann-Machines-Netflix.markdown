@@ -15,7 +15,7 @@ Dans le cadre de ce projet, nous allons nous lancer dans la création d'une mach
 
 Pour cela, nous allons commencé par importer les librairies nécessaires.
 
-**Model**: Importing the libraries
+**Importing** the libraries
 
 ```python
 import numpy as np
@@ -27,6 +27,14 @@ import torch.optim as optim
 import torch.utils.data
 from torch.autograd import Variable
 ```
+
+Par la suite, nous allons lire le datasets contenant les contenus provenant de Netflix.
+
+```python
+df = pd.read_csv("netflix_titles.csv",sep=",")
+df.head()
+```
+![Screenshot](post2_2.png)
 
 # Final thoughts
 
