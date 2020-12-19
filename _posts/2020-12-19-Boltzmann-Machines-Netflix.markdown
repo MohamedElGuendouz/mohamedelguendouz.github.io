@@ -7,7 +7,7 @@ tags: [Machine Learning,Python,Model,Boltzmann,Netflix,Pandas,pattern,Torch,data
 comments: true
 sharing: true
 published: true
-img: business-5475660_1280.jpg
+img: post2.png
 ---
 
 
