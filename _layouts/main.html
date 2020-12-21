@@ -44,13 +44,29 @@ layout: default
     </ul>
     <!--cycles through tag list and creates subheader for each tag name...-->
     {% for this_word in tag_words %}
+
     <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
+
     <!--  lists all posts corresponding to specific tag...-->
       {% for post in site.tags[this_word] %}{% if post.title != null %}
-      <div class="tag-list">
-          <span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span>
-          <small><span>| {{ post.date | date_to_string }}</span></small>
-      </div>
+
+
+      <article class="post">
+        {% if post.img %}
+          <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+        {% else %}
+        {% endif %}
+        <div class="post-content">
+          <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+          <p></p>
+          <span class="post-date">{{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>
+          <span class="post-words">{% capture words %}{{ post.content | number_of_words }}{% endcapture %}{% unless words contains "-" %}{{ words | plus: 350 | divided_by: 350 | append: " minute read" }}{% endunless %}</span>
+        </div>
+      </article>
+
+
+
+      
       {% endif %}{% endfor %}
     {% endfor %}
   </section>
