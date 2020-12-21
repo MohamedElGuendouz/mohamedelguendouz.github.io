@@ -3,7 +3,7 @@ layout: post
 title: "Classification de texte - Notes de frais"
 date: 2020-11-22 21:30:00 +0200
 description: "Classification, NLTK, Machine Learning, Comptability"
-tags: [Classification, NLTK]
+tags: [Classification, NLTK, Pandas, Glob]
 comments: true
 sharing: true
 published: true
