@@ -11,9 +11,8 @@ layout: default
         <a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
       </div>
       </div>-->
-      <div class="author-name">{{site.author}}</div>
+      <div class="author-name"><a href="{{"/" | prepend: site.baseurl}}"><i class="fa fa-home" aria-hidden="true"></i>{{site.author}}</a></div>
     </div>
-    <div class="go-home"><a href="{{"/" | prepend: site.baseurl}}"><i class="fa fa-home" aria-hidden="true"></i>Homes</a></div>
 
   </header> <!-- End Header -->
   {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
