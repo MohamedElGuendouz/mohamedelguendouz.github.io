@@ -3,7 +3,7 @@ layout: post
 title: "Data Visualization"
 date: 2020-11-22 21:30:00 +0200
 description: "CNN, RNN, DEEP LEARNING ?"
-tags: [Visualisation]
+tags: [Visualisation, Pandas]
 comments: true
 sharing: true
 published: true
