@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Boltzmann Machines - Netflix"
+title: "Classification de texte - Notes de frais"
 date: 2020-11-22 21:30:00 +0200
-description: "Boltzmann, Machine Learning, Movies"
-tags: [Machine Learning,Python,Model,Boltzmann,Netflix,Pandas,pattern,Torch,data]
+description: "Classification, NLTK, Machine Learning, Comptability"
+tags: [Machine Learning,Python,Model,NLTK,Netflix,Pandas,pattern,Torch,data]
 comments: true
 sharing: true
 published: true
-img: netflixstreaming-2.jpg
+img: supervised-classification.png
 ---
 
 
