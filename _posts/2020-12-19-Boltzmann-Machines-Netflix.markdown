@@ -11,7 +11,7 @@ img: netflixstreaming-2.jpg
 ---
 
 
-Dans le cadre de ce projet, nous allons nous lancer dans la création d'une machine de Boltzmann afin de créer un système de recommendation des contenus que l'on peut retrouver sur Netflix.
+Dans le cadre de ce projet, nous allons nous lancer dans la création d'une machine de Boltzmann afin de créer un système de recommandation des contenus que l'on peut retrouver sur Netflix.
 
 Pour cela, nous allons commencé par importer les librairies nécessaires.
 
