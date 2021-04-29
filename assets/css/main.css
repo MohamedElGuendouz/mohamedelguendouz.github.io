@@ -789,7 +789,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   color: #DFDFDF;
-  background-color: #211F1E;
+  background-color: #FFFFFF;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -943,7 +943,7 @@ table tfoot td {
   width: 240px;
   height: 100%;
   padding: 20px 10px;
-  background-color: #afafaf;
+  background-color: #FFFFFF;
 }
 
 .about {
@@ -1045,7 +1045,7 @@ table tfoot td {
 
 .recent .post {
   border: 1px solid #232120;
-  background-color: #232120;
+  background-color: #FFFFFF;
 }
 
 .contact .contact-title {
@@ -1070,7 +1070,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   left: 0;
-  background-color: #515151;
+  background-color: #FFFFFF;
 }
 
 .contact .contact-title::after {
@@ -1085,7 +1085,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   right: 0;
-  background-color: #515151;
+  background-color: #FFFFFF;
 }
 
 .contact ul {
