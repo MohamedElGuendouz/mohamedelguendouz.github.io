@@ -891,7 +891,7 @@ table tfoot td {
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
 
 .post, .article-page {
-  background-color: #ffffff;
+  background-color: #2C2A28;
 }
 
 .article-page {
@@ -1390,7 +1390,7 @@ a.newer-posts:hover {
 /* - - - - - - - - - - Tag Styles - - - - - - - - - - */
 .blog-tags {
   width: 100%;
-  background-color: #3f4aaa;
+  background-color: #ffffff;
   padding: 0 20px 20px;
 }
 
