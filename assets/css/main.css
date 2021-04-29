@@ -788,7 +788,8 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #ffffff;
+  color: #DFDFDF;
+  background-color: #211F1E;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -890,7 +891,7 @@ table tfoot td {
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
 
 .post, .article-page {
-  background-color: #2C2A28;
+  background-color: #ffffff;
 }
 
 .article-page {
