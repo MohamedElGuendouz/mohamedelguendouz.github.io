@@ -943,7 +943,7 @@ table tfoot td {
   width: 240px;
   height: 100%;
   padding: 20px 10px;
-  background-color: #2C2A28;
+  background-color: #4d92e0;
 }
 
 .about {
@@ -1070,7 +1070,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   left: 0;
-  background-color: #515151;
+  background-color: #c5c5c5;
 }
 
 .contact .contact-title::after {
@@ -1085,7 +1085,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   right: 0;
-  background-color: #515151;
+  background-color: #c5c5c5;
 }
 
 .contact ul {
