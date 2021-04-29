@@ -7,7 +7,7 @@ tags: [Notebook Jupyter, Python, NLTK]
 comments: true
 sharing: true
 published: true
-img: content-kpi.jpg
+img: content-kpi.png
 ---
 Dans le cadre de ce projet, nous allons nous lancer dans la création de KPI en partant de données fictives représentant les salariés d'une entreprise.
 
