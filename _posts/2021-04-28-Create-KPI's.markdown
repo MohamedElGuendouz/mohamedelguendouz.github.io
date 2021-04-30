@@ -57,7 +57,9 @@ Ensuite nous allons calculé l'écart salariale (Wage Gap)
 
 ## Wage Gap
 
-![](../assets/img/Create%20KPI's/Wage_Gap_Formula.PNG)
+Voici un apercu de la formule permettant de créer un ratio exprimant l'écart salariale au sein du groupe :
+
+![](../assets/img/Create%20KPI's/KPI_Wage_Gap.PNG)
 
 
 ------------------------------------------------------------------------------------------------------------------
@@ -73,4 +75,8 @@ Voici une visualisation des métiers les plus recrutés dans le groupe :
 ![](../assets/img/Create%20KPI's/proportion_job_by_salaries_pie.PNG)
 
 
-> Conclusion : On constate une grande disparité dans les métiers de ce groupe.
+> Conclusion : On constate une grande disparité dans les métiers de ce groupe. Mais quant est-il de la disparité des salaires par rapport aux métiers que l'on retrouve dans l'entreprise ?
+
+## Moyenne salariale par métier
+
+![](../assets/img/Create%20KPI's/job_by_salaries.PNG)
