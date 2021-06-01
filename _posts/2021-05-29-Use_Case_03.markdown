@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Use Case : Salary prediction model"
+date: 2021-04-28 12:00:00 +0200
+description: "Creation of ML model for predicting Data Scientist salary"
+tags: [Java, Kafka]
+comments: true
+sharing: true
+published: true
+img: Use_Case_3/main.jpg
+---
+
+
+## The objective of this use case is to create ML model for predicting Data Scientist salary with the Apache Kafka Streams API.
+
+
+## Creation of dataset
+
+![](../assets/img/Create%20KPI's/Create%20datasets.PNG)
