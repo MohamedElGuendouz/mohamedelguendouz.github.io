@@ -7,7 +7,7 @@ url: "https://mohamedelguendouz.github.io"
 site-twitter: 
 
 # Author Settings
-author: Mohamed El GUendouz
+author: Mohamed El Guendouz
 author-img: profil.jfif
 about-author: Je suis un ingénieur en informatique temrinant sa dernière année en alternance chez Banque PSA Finance.
 social-twitter: 
@@ -20,7 +20,7 @@ social-email: mohamed.elguendouz@outlook.fr
 discus-identifier: mr-brown
 
 # Tracker
-analytics: 
+analytics: 260250966
 
 # Build Settings
 markdown: kramdown
