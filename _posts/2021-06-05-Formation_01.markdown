@@ -1,0 +1,101 @@
+---
+layout: post
+title: "Use Case : Salary prediction model"
+date: 2021-04-28 12:00:00 +0200
+description: "Creation of ML model for predicting Data Scientist salary"
+tags: [Java, Kafka]
+comments: true
+sharing: true
+published: true
+img: Use_Case_3/main.jpg
+---
+
+
+L'objectif de cette formation va être de poser les bases de l'écosystème Hadoop afin d'avoir une vision clair des briques que contient la plateforme Hadoop.
+
+Afin de comprendre ces briques, nous allons poser une defition simple et clair de ce que représente Hadoop.  
+  
+## Qu'est-ce qu'Hadoop ?
+> Hadoop est un plateforme destiner à créer des applications leur permettant d'éffectuer des traitements de manière distribuer. C'est un Framework open source écrit en Java et concu selon une hypothèse que les pannes matérielles sont fréquentes et qu'elle doivent être gérers de manière automatique.
+
+## De quoi est composé ce Framework ?
+
+L'écosystème Hadoop peut être divisé en trois parties :
+
+1. HDFS
+2. MapReduce
+3. YARN
+
+![](https://amitray.com/wp-content/uploads/2021/04/Hadoop-Architecture-YARN-HDFS-MapReduce.jpg)
+
+### 1) HDFS
+
+> C'est un système de fichier qui est scalable en permettant d'ajouter facilement desnoeuds et des serveurs. 
+
+Il propose une solution de redondance des données afin de réduire le risque de perte de données. Les données sont ainsi dupliqués en 3 exemplaires et reparties sur 3 noeuds différents.
+
+HDFS permet de résourdre les problèmes des précédents systèmes de gestion qui ne pouvaient pas prendre en charge les flux de données et les analyses en temps réel.
+
+![](https://www.lebigdata.fr/wp-content/uploads/2017/08/hdfs-fonctionnement.jpg)
+
+Le NameNode est le manager du cluster (serveur principal). Lorsque le client se connecte à l'HDFS, le système demande alors le namenode. Il répond et indique les emplacements des blocks composant le fichier recherché par le client. 
+
+Les DataNodes se chargent de gérer le stockage associé aux noeuds. Il permettent ou non, en fonction des instructions du NameNode, l'écriture ou la lecture des fichiers par le client.
+
+Il notifie régulièrement le NameNode en lui trnasmettant un "HeartBeat" qui assure le fonctionnement du DataNode et un "BlockReport" pour stocker la liste des blocs présents dans le DataNode.
+
+DataNodes choisis retournent ensuite les données au client. Une fois le retour des données terminé, la connexion du client est fermée.
+
+#### Techniquement parlant ?
+
+le fichier core-site.xml indique l'host et le port du système de fichier HDFS :
+
+```xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ <configuration>
+  <property>
+   <name>fs.default.name</name>
+   <value>hdfs://master.local:9000</value>
+   <description>The name of the default file system. A URI whose scheme and authority determine the FileSystem implementation.</description>
+  </property>
+ </configuration>
+```
+
+le fichier hdfs-site.xml contient la confuration du NameNode et des DataNodes avec nottament l'emplacement du stockage de l'historique des transactions et des blocks. Ont y défini aussi le cefficient de réplication :
+
+```xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+ <property>
+  <name>dfs.replication</name>
+  <value>3</value>
+  <description>The actual number of replications can be specified when the file is created.</description>
+ </property>
+<property>
+    <name>dfs.data.dir</name>
+    <value>/srv/hadoop/datanode</value>
+</property>
+<property>
+    <name>dfs.name.dir</name>
+    <value>/srv/hadoop/namenode</value>
+</property>
+</configuration>
+```
+
+Voici les instructions permettant respectivement de formater le systèmes de fichiers, démarrer les daemons et notre NameNode et des DataNodes ainsi que vérifier le bon fonctionnement en effectuant un **ls**.
+
+```console
+$HADOOP_PREFIX/bin/hdfs namenode -format
+$HADOOP_PREFIX/sbin/start-all.sh
+hdfs dfs -ls .
+```
+
+#### Sources
+```
+https://amitray.com/hadoop-architecture-in-big-data-yarn-hdfs-and-mapreduce/
+https://amitray.com/hadoop-architecture-in-big-data-yarn-hdfs-and-mapreduce/
+https://www.lebigdata.fr/hdfs-fonctionnement-avantages
+https://stph.scenari-community.org/contribs/nos/Hadoop2/co/Comprendre_HDFS_2.html
+```
