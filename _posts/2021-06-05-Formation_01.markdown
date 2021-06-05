@@ -7,7 +7,7 @@ tags: [HDFS, MapReduce, YARN, Hive]
 comments: true
 sharing: true
 published: true
-img: main.png
+img: Formation_01/main.png
 ---
 
 
