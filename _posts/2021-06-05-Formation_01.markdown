@@ -20,7 +20,7 @@ Afin de comprendre ces briques, nous allons poser une defition simple et clair d
 
 ## De quoi est composé ce Framework ?
 
-L'écosystème Hadoop peut être divisé en trois parties :
+L'écosystème Hadoop contient trois modules principals qui sont :
 
 1. HDFS
 2. MapReduce
@@ -28,7 +28,7 @@ L'écosystème Hadoop peut être divisé en trois parties :
 
 ![](https://amitray.com/wp-content/uploads/2021/04/Hadoop-Architecture-YARN-HDFS-MapReduce.jpg)
 
-### 1) HDFS
+### 1) HDFS (Storage)
 
 > C'est un système de fichier qui est scalable en permettant d'ajouter facilement desnoeuds et des serveurs. 
 
@@ -46,7 +46,7 @@ Il notifie régulièrement le NameNode en lui trnasmettant un "HeartBeat" qui as
 
 DataNodes choisis retournent ensuite les données au client. Une fois le retour des données terminé, la connexion du client est fermée.
 
-#### Techniquement parlant ?
+#### D'accord Mohamed, mais techniquement parlant comment configurer HDFS?
 
 le fichier core-site.xml indique l'host et le port du système de fichier HDFS :
 
@@ -92,10 +92,130 @@ $HADOOP_PREFIX/sbin/start-all.sh
 hdfs dfs -ls .
 ```
 
+### 2) MapReduce (Processing)
+> C'est un concept d'architecture de programmation créer par Google. Il permet de manipuler de grandes quantités de données en les distribuant dans un cluster de machines pour être traitées.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mapreduce.png/1024px-Mapreduce.png)
+
+MapReduce se compose de deux fonctions principales qui sont Map() et Reduce(). La première consiste a analyser un traitement et le découper en sous-traitement afin de déléguer chaque problème à chaque noeud du cluster.
+
+La seconde fonction consiste a remonter et regroupper chaque résultat afin d'obtenir un résultat final.
+
+
+### 3) YARN (Ressource Management)
+
+> Cette technologie permet d'allouer des ressources du système aux différentes applications exécutées dans un cluster.
+
+Il offre la possibilité de lancer des applications en temps réel, de réaliser des requêtes interactives sur Apache Spark en utilisant en parrallèle les fonctionalités fournit par MapReduce.
+
+![](https://cdn.educba.com/academy/wp-content/uploads/2019/09/Hadoop-YARN-Architecture-1-1.png)
+
+On retrouve plusieurs composants dans cette technologie qui sont :
+- ***le gestionnaire de ressources (RessourceManager)*** permettant de gérer les tâches sousmises par les utilisateurs en plannifiant les tâches et en leur allouant les ressources suffisantes.
+- ***le NodeManager et l'ApplicationMaster*** aide le RessourceManager en surveillant le bon déroulement des tâches. Une ***ApplicationMaster*** est unique et associé à une seul application.
+- ***le containers de ressources*** permet quant à lui, d'assigner les ressources allouées aux applications.
+
+
+Cette ecosystème se compose du plusieurs logicielles permettant sa gestion en matières ingestion, de tranformation et d'exposition. 
+
+En voici la liste : 
+
+A) Apache Spark
+B) Apache Kafka
+C) Sqoop
+D) Flume
+E) HBASE
+F) Hive
+G) Pig
+H) Oozie
+I) Zookeeper
+
+Nous allons étudier le rôle de chaque solution afin d'évoquer les différents concepts de cet écosystème.
+
+
+## Les composants de l'écosystème
+
+### A) Apache Spark
+>
+
+A l'inverse de MapReduce de Hadoop, travaillant étape par étape, Spark offre la possibilité de travaillé sur la totalité des données en même temps. Cela permet ainsi de gagner en rapidité dans les traitements de données qui peuvent parfois être non négligable.
+
+Ce Framework contient plusieurs composants :
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Sch%C3%A9ma_d%C3%A9tail_outils_spark.png/1024px-Sch%C3%A9ma_d%C3%A9tail_outils_spark.png)
+
+1) ***Spark SQL*** permet simplement d'éxécuter des requêtes SQL sur les données du cluster.
+2) ***Spark Streaming*** est utilisé pour effectuer des traitements de données en temps-rêel.
+3) ***Spark Graph X*** est un nouveau composant de SPark. Il permet de réaliser des calculs issues de la théorie des graphes. Ces calculs sont réaliser sur un ensemble de données appellé RDD (ensemble de données distribués et resilients) que l'on peut immagé comme étant un graphe.
+![](https://drek4537l1klr.cloudfront.net/malak/Figures/04fig01_alt.jpg)
+
+### B) Apache Kafka
+> C'est un agent de message (message broker), codé en Scala et Java, permettant de manipulé des données en temps réel. Une autre définition serait que c'est un système de stockage de flux de messages (streams of records).
+
+Un message est composé d'une valeur et d'une clé ainsi qu'un timestamp.   
+Il gère les messages en catégories (topics)
+![](https://www.cloudkarafka.com/img/blog/apache-kafka-partition.png)
+Chaque émetteur (client Kafka) peut seulement ajouter un message dans un topic à la fin de la pile (seulement).
+
+![](https://i1.wp.com/kafka.apache.org/0110/images/log_consumer.png?resize=800%2C487&ssl=1)
+
+Le consommateur lit des topics à partir d’un index ou d’un timestamp donné, toujours dans l’ordre, c’est-à-dire du plus ancien message au plus récent, et sans s’arrêter. 
+
+Si un consommateur a traité tous les messages d’un topic, il y reste connecté pour recevoir les nouveaux messages insérés par les émetteurs.
+
+Les topics sont immuable et peuvent être lus simultanément par de multiples consommateurs.
+
+### C) Sqoop
+> Sqoop joue un rôle vital dans l'écosystème Hadoop. Il offre un shell permettant aux utilisateur de Hadoop, d'importer des données depuis les base de données relationnelles (MySQL, Oracle RDB, etc..) vers des couches de stockage (HDFS, HBase ou Hive). ***Sqoop*** veut dire " ***SQ***L vers Had***oop***".
+
+Voici le fonctionnement interne de Sqoop :
+![](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2018/02/Apache-Sqoop-Import-Architecture-01-1024x536.jpg)
+
+Sur HDFS, chaque ligne d'une table est considéré comme un enregistrement. La tâche principale qui est d'importer une table sera divisé en plusieurs tâches. Elle seront réalisées par un job Sqoop (Map) qui auront pour objectif d'importer une partie des données.
+
+![](https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2018/02/Apache-Sqoop-Export-Architecture-01-1024x536.jpg)
+
+L'exportation utilise le même cheminement mais à l'inverse de l'importation.
+
+### D) Flume
+> C'est un logicielle permettant la collecte, l'agreggation et le transfert de gros volumes de logs dont l'objectif est de gérer des pic de charge importantes. Il est l'alternative a Kafka même si ce dernier répond à d'autres problématiques (massage broker).
+
+![](https://blog.octo.com/wp-content/uploads/2013/02/anatomie-agent-flume-avancee.png)
+
+### E) HBASE
+> C'est une base de données non relationnelles, distribué, exécutée sur HDFS et concue pour donner un accès en temps réel à des grandes tables. Il a été concu sur le modèle de Google Bigtable.
+
+![](https://java2blog.com/wp-content/webpc-passthru.php?src=https://java2blog.com/wp-content/uploads/2018/05/hbase-architecture-in-hadoop.png&nocache=1)
+
+  
+***Apache Phoenix*** offre la possible d'avoir un accès SQL aux tables HBase.  
+
+/!\ (En cours de rédaction...)
+
+### F) Hive
+>
+### G) Pig
+>
+### H) Oozie
+>
+### I) Zookeeper
+>
+
+
+
 #### Sources
 ```
 https://amitray.com/hadoop-architecture-in-big-data-yarn-hdfs-and-mapreduce/
 https://amitray.com/hadoop-architecture-in-big-data-yarn-hdfs-and-mapreduce/
 https://www.lebigdata.fr/hdfs-fonctionnement-avantages
 https://stph.scenari-community.org/contribs/nos/Hadoop2/co/Comprendre_HDFS_2.html
+https://www.lebigdata.fr/yarn-apache-hadoop
+https://www.educba.com/hadoop-yarn-architecture/
+https://livebook.manning.com/book/spark-graphx-in-action/chapter-4/
+https://fr.wikipedia.org/wiki/Objet_immuable
+https://blog.zenika.com/2017/09/14/mais-cest-quoi-apache-kafka/
+https://www.talend.com/fr/resources/sqoop/
+https://data-flair.training/blogs/sqoop-architecture-and-working/
+https://blog.octo.com/introduction-a-flume-ng/
+https://java2blog.com/hadoop-hbase/
 ```
