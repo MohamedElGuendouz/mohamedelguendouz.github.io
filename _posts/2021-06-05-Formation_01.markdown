@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Use Case : Salary prediction model"
-date: 2021-04-28 12:00:00 +0200
-description: "Creation of ML model for predicting Data Scientist salary"
-tags: [Java, Kafka]
+title: "Formation : Hadoop"
+date: 2021-06-05 12:00:00 +0200
+description: "Découvrir l'écosystème de Hadoop"
+tags: [HDFS, MapReduce, YARN, Hive]
 comments: true
 sharing: true
 published: true
-img: Use_Case_3/main.jpg
+img: https://data-flair.training/blogs/wp-content/uploads/sites/2/2017/04/Hadoop-Ecosystem-2-01.jpg
 ---
 
 
