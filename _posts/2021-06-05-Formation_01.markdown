@@ -93,7 +93,7 @@ hdfs dfs -ls .
 ```
 
 ### 2) MapReduce (Processing)
-> C'est un concept d'architecture de programmation créer par Google. Il permet de manipuler de grandes quantités de données en les distribuant dans un cluster de machines pour être traitées.
+> C'est un concept d'architecture de programmation créer par Google. Aujourd'hui, ce concept est devenu un Framework central dans l'écosystème Hadoop. Il permet de manipuler de grandes quantités de données en les distribuant dans un cluster de machines pour être traitées.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mapreduce.png/1024px-Mapreduce.png)
 
@@ -178,7 +178,7 @@ Sur HDFS, chaque ligne d'une table est considéré comme un enregistrement. La t
 L'exportation utilise le même cheminement mais à l'inverse de l'importation.
 
 ### D) Flume
-> C'est un logicielle permettant la collecte, l'agreggation et le transfert de gros volumes de logs dont l'objectif est de gérer des pic de charge importantes. Il est l'alternative a Kafka même si ce dernier répond à d'autres problématiques (massage broker).
+> C'est un logicielle permettant la collecte, l'agreggation et le transfert de gros volumes de logs dont l'objectif est de gérer des pic de charge importantes. Il est l'alternative a Kafka même si ce dernier répond à d'autres problématiques (message broker).
 
 ![](https://blog.octo.com/wp-content/uploads/2013/02/anatomie-agent-flume-avancee.png)
 
@@ -188,20 +188,50 @@ L'exportation utilise le même cheminement mais à l'inverse de l'importation.
 ![](https://java2blog.com/wp-content/webpc-passthru.php?src=https://java2blog.com/wp-content/uploads/2018/05/hbase-architecture-in-hadoop.png&nocache=1)
 
   
-***Apache Phoenix*** offre la possible d'avoir un accès SQL aux tables HBase.  
+***Apache Phoenix*** offre la possible d'avoir un accès aux tables HBase avec le langage SQL.  
 
 /!\ (En cours de rédaction...)
 
 ### F) Hive
->
+> Hive est un entrepôt de données central où l'information provient d'une ou plusieurs source de données. Il permet le requêtage des tableaux stocker dans HDFS avec un langage proche du SQL qui est le HiveQL (HQL).
+
+Les bases de données Hive sont similaires aux base de données relationnelle. Elles sont constituées de tableaux, composés de partitions. Les partitions peuvent être décomposées en "buckets"
+
+![](https://image.slidesharecdn.com/hivemodelingandoptimization-170606160854/95/hive-data-modeling-and-query-optimization-14-638.jpg?cb=1496765658)
+
+
 ### G) Pig
->
+> C'est une solution logicielle codé en Java permettant l'écriture de scripts qui sont éxécutés sur l'infrastructure Hadoop sans être obligé de passer par l'écriture de tâche via le framework MapReduce. 
+
+Il possède sont propre langage qui est le Pig Latin. Il est souvent utiliser pour charger des données externes vers des fichiers HDFS.
+
+
 ### H) Oozie
->
+> C'est un système de planification qui permet d’exécuter et de gérer des tâches Hadoop dans un environnement distribué. 
+
+Il permet de combiner plusieurs tâches complexes dans un ordre séquentiel pour accomplir une tâche plus importante.
+
+On le considère comme un planificateur de workflow qui permet de donner des tâches d'importation envers le HDFS. Il offre également la possibilité de notifier le HDFS en termes de fichiers importés et exportés.
+
+
 ### I) Zookeeper
->
+> C'est une solution distribué suivant l'architecture client-serveur. Elle permet la synchronisation et la coordination des systèmes distribués présent sur un cluster Hadoop.
 
+![](https://i1.wp.com/techvidvan.com/tutorials/wp-content/uploads/sites/2/2020/08/Zookeeper-Architecture-TV.jpg?w=995&ssl=1)
 
+Un ***Ensemble*** correspond à tous les noeuds de serveur de l'écosystème Zookeeper. Il en faut au moins 3 pour former un écosystème Zookeeper. 
+
+Un ***Server*** est l'un des serveur de l'écosystème et a pour objectif de fournir tous les services à ses clients. 
+
+Un ***Server Leader*** est élu au démarrage du service et est responsable de la récupération automatique des données pour les clients. Il a accès aux données des noeuds qui serait défaillants.
+
+Un ***Server Follower*** suit les instructions passés par le Server Leader.
+
+Un ***Client*** un noeud qui demande un service au serveur auquelle il est associé. Il envoi un signaux au serveur pour lui informer de sa disponibilité. Si le serveur ne répond pas, le noeud client se redigera automatiquement vers le prochain serveur.
+
+Il existe de nouvelles technologies dans l'écosystème Hadoop qui n'a pas été évoqué dans ce document et que vous pouvez retrouver sur ce schéma : 
+
+![](https://www.decideo.fr/photo/art/grande/20518820-23961036.jpg?v=1519860997)
 
 #### Sources
 ```
@@ -218,4 +248,6 @@ https://www.talend.com/fr/resources/sqoop/
 https://data-flair.training/blogs/sqoop-architecture-and-working/
 https://blog.octo.com/introduction-a-flume-ng/
 https://java2blog.com/hadoop-hbase/
+https://datascientest.com/apache-hive
+https://www.lebigdata.fr/apache-zookeeper-tout-savoir-sur-le-systeme-de-coordination
 ```
