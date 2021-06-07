@@ -14,6 +14,13 @@ img: Use_Case_2/main.jpg
 
 L'objectif de ce cas d'utilisation est de faire le tour de toutes les possibilités pour traiter les données manquantes.
 
+Pour pouvoir essayer les commandes ci-dessous, vous pouvez créer les données de test sur mockaroo.com :
+
+![](..\assets\img\Use_Case_3\MOCK.PNG)
+
+Voici un apercu des données :
+
+![](..\assets\img\Use_Case_3\MOCK_PREVIEW.PNG)
 
 ## Technique de suppression
 
