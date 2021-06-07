@@ -3,18 +3,14 @@ layout: post
 title: "Use Case : Salary prediction model"
 date: 2021-04-28 12:00:00 +0200
 date-last-modif: 2021-06-06 19:55:00 +0200
-description: "Creation of ML model for predicting Data Scientist salary"
-tags: [Java, Kafka]
+description: "Creation of ML model for predicting Iphone price"
+tags: [Java, Kafka, Scala]
 comments: true
 sharing: true
 published: true
 img: Use_Case_3/main.jpg
 ---
 
+L'objectif de ce cas d'utilisation est de créer un modèle ML pour prédire le prix du prochain Iphone.Pour cela nous allons utiliser Apache Kafka et le langage Scala.
 
-## The objective of this use case is to create ML model for predicting Data Scientist salary with the Apache Kafka Streams API.
-
-
-## Creation of dataset
-
-![](../assets/img/Create%20KPI's/Create%20datasets.PNG)
+![](https://centreformationaquitaine-fnmns.fr/img/page_en_construction.jpg)

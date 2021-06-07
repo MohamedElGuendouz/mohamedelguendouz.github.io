@@ -31,7 +31,7 @@ Hadoop contient trois modules principaux qui sont :
 
 ### 1) HDFS (Storage)
 
-> C'est un système de fichier qui est scalable en permettant d'ajouter facilement des noeuds et des serveurs.
+> C'est un système de fichier qui est scalable et qui permet d'ajouter facilement des noeuds et des serveurs.
 
 Il propose une solution de redondance des données afin de réduire le risque de perte de données. Les données sont ainsi dupliquées en 3 exemplaires et reparties sur 3 nœuds différents.
 
@@ -39,13 +39,13 @@ HDFS permet de résoudre les problèmes des précédents systèmes de gestion qu
 
 ![](https://www.lebigdata.fr/wp-content/uploads/2017/08/hdfs-fonctionnement.jpg)
 
-Le NameNode est le manager du cluster (serveur principal). Lorsque le client se connecte à l'HDFS, le système demande alors le NameNode. Il répond et indique les emplacements des blocks composant le fichier recherché par le client.
+Le NameNode est le manager du cluster (serveur principal). Lorsque un client se connecte à l'HDFS, le système demande alors le NameNode. Il répond et indique les emplacements des blocks composant le fichier recherché par le client.
 
 Les DataNodes se chargent de gérer le stockage associé aux nœuds. Ils permettent ou non, en fonction des instructions du NameNode, l'écriture ou la lecture des fichiers par le client.
 
-Il notifie régulièrement le NameNode en lui transmettant un "HeartBeat" qui assure le fonctionnement du DataNode et un "BlockReport" pour stocker la liste des blocs présents dans le DataNode.
+Ils notifient régulièrement le NameNode en lui transmettant un "HeartBeat" qui assure le fonctionnement du DataNode et un "BlockReport" pour stocker la liste des blocs présents dans le DataNode.
 
-DataNodes choisis retournent ensuite les données au client. Une fois le retour des données terminé, la connexion du client est fermée.
+DataNodes choisis retournent ensuite les données au client. Une fois le retour des données terminé, la connexion avec le client est fermée.
 
 #### D'accord Mohamed, mais techniquement parlant comment configurer HDFS?
 
@@ -85,7 +85,7 @@ Le fichier hdfs-site.xml contient la configuration du NameNode et des DataNodes 
 </configuration>
 ```
 
-Voici les instructions permettant respectivement de formater le système de fichiers, démarrer les daemons et notre NameNode et des DataNodes ainsi que vérifier le bon fonctionnement en effectuant un **ls**.
+Voici les instructions permettant respectivement de formater le système de fichiers, de démarrer les daemons et notre NameNode et des DataNodes ainsi que de vérifier le bon fonctionnement en effectuant un **ls** du repértoire courant.
 
 ```console
 $HADOOP_PREFIX/bin/hdfs namenode -format
@@ -94,11 +94,13 @@ hdfs dfs -ls .
 ```
 
 ### 2) MapReduce (Processing)
-> C'est un concept d'architecture de programmation créer par Google. Aujourd'hui, ce concept est devenu un Framework central dans l'écosystème Hadoop. Il permet de manipuler de grandes quantités de données en les distribuant dans un cluster de machines pour être traitées.
+> C'est un concept d'architecture de programmation créé par Google. Aujourd'hui, ce concept est devenu un Framework central dans l'écosystème Hadoop. Il permet de manipuler de grandes quantités de données en les distribuant dans un cluster de machines pour être traitées.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Mapreduce.png/1024px-Mapreduce.png)
 
-MapReduce se compose de deux fonctions principales qui sont Map() et Reduce(). La première consiste à analyser un traitement et le découper en sous-traitement afin de déléguer chaque problème à chaque nœud du cluster.
+MapReduce se compose de deux fonctions principales qui sont Map() et Reduce().
+
+La première consiste à analyser un traitement et le découper en sous-traitement afin de déléguer chaque problème à chaque nœud du cluster.
 
 La seconde fonction consiste à remonter et regrouper chaque résultat afin d'obtenir un résultat final.
 
@@ -137,7 +139,7 @@ Nous allons étudier le rôle de chaque solution afin d'évoquer les différents
 ## Les composants de l'écosystème
 
 ### A) Apache Spark
->
+> Spark est un moteur de traitement de données qui permet d'effectuer un traitement de larges volumes de données de manière distribuée.
 
 À l'inverse de MapReduce de Hadoop, travaillant étape par étape, Spark offre la possibilité de travaillé sur la totalité des données en même temps. Cela permet ainsi de gagner en rapidité dans les traitements de données qui peuvent parfois être non négligeable.
 
@@ -151,10 +153,12 @@ Ce Framework contient plusieurs composants :
 ![](https://drek4537l1klr.cloudfront.net/malak/Figures/04fig01_alt.jpg)
 
 ### B) Apache Kafka
-> C'est un agent de message (message broker), codé en Scala et Java, permettant de manipuler des données en temps réel. Une autre définition serait que c'est un système de stockage de flux de messages (streams of records).
+> C'est un agent de message (message broker), codé en Scala et Java, permettant de manipuler des données en temps réel. 
+
+> C'est un système de stockage de flux de messages (streams of records).
 
 Un message est composé d'une valeur et d'une clé ainsi qu'un timestamp.
-Il gère les messages en catégories. (topics)
+Kafka gère les messages en catégories appelé topics :
 ![](https://www.cloudkarafka.com/img/blog/apache-kafka-partition.png)
 Chaque émetteur (client Kafka) peut seulement ajouter un message dans un topic à la fin de la pile (seulement).
 
@@ -189,8 +193,22 @@ L'exportation utilise le même cheminement, mais à l'inverse de l'importation.
 
 ![](https://java2blog.com/wp-content/webpc-passthru.php?src=https://java2blog.com/wp-content/uploads/2018/05/hbase-architecture-in-hadoop.png&nocache=1)
 
-  
+Les ***tables HBASE*** sont des collections de lignes de manière logique qui sont stockées dans différentes partitions appelées régions.
+
+Les ***HBASE Rows*** représentent un enregistrement de données. Chaque enregistrement sont associé à une RowKey.
+
+***RowKey*** est utilisé pour identifier chaque entrée dans la table HBase
+
+***Write-Ahead Log (WAL)*** est un journal qui enregistre toutes les modifications apportés aux données dans HBase.
+
+***HFile*** est le format de fichier de paires clé/valeur triées de Hbase 
+
 ***Apache Phoenix*** offre la possibilité d'avoir un accès aux tables HBase avec le langage SQL.  
+
+Le ***MemStore*** est un tampon d'écriture où HBase accumule les données en mémoire avant une écriture permanente.
+
+***HMaster*** qui est responsable de la coordination des régions du cluster et de l'exécution des opérations administratives
+
 
 ### F) Hive
 > Hive est un entrepôt de données central où l'information provient d'une ou plusieurs sources de données. Il permet le requêtage des tableaux stocker dans HDFS avec un langage proche du SQL qui est le HiveQL (HQL).
