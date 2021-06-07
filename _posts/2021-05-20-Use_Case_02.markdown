@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use Case : Comment traiter les données manquantes avec Python"
+title: "Case Study : Comment traiter les données manquantes avec Python"
 date: 2021-04-28 12:00:00 +0200
 date-last-modif: 2021-06-06 19:55:00 +0200
 description: "Utilisation de Pandas pour traiter les données manquantes"

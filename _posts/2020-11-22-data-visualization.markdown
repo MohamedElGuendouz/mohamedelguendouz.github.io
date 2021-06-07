@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data Visualization"
+title: "Case Study : Data Visualization"
 date: 2020-11-22 21:30:00 +0200
 date-last-modif: 2021-06-06 19:55:00 +0200
 description: "CNN, RNN, DEEP LEARNING ?"
