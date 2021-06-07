@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Use Case : Salary prediction model"
+title: "Use Case : Prédire le prix de l'action Apple avec Scala et Kafka"
 date: 2021-04-28 12:00:00 +0200
 date-last-modif: 2021-06-06 19:55:00 +0200
-description: "Creation of ML model for predicting Iphone price"
+description: "Création d'un modèle de machine learning pour prédire le prix d'une action en Bourse"
 tags: [Java, Kafka, Scala]
 comments: true
 sharing: true
@@ -11,6 +11,6 @@ published: true
 img: Use_Case_3/main.jpg
 ---
 
-L'objectif de ce cas d'utilisation est de créer un modèle ML pour prédire le prix du prochain Iphone.Pour cela nous allons utiliser Apache Kafka et le langage Scala.
+L'objectif de ce cas d'utilisation est de créer un modèle ML pour prédire le prix de l'action APPL (Apple). Pour cela nous allons utiliser Apache Kafka et le langage Scala.
 
 ![](https://centreformationaquitaine-fnmns.fr/img/page_en_construction.jpg)
