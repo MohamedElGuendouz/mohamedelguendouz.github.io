@@ -36,8 +36,10 @@ Cette approche n'est pas recommandée, car elle peut entraîner une perte d'info
 L'objectif va être de supprimer chaque enregistrement contenant des valeurs manquantes.
 
 Pour cela, voici la commande a réaliser avec Pandas pour obtenir ce résultat :
-```
+```python
 df.dropna(subset=['Manpower'],how='any',inplace=True)
+# Ou bien :
+df = df[df.Manpower.notnull()]
 ```
 
 
@@ -48,7 +50,15 @@ df.dropna(subset=['Manpower'],how='any',inplace=True)
 
 Avec l'utilisation d'un DataFrame, voici la commande à utiliser :
 ```
-df = df[df.Manpower.notnull()]
+#Réinitialisation de l'index du dataframe
+df_reset = df.reset_index()
+
+#Réccupérer l'emplacement des données manquantes
+df_index = df_reset.loc[df_reset.isnull().sum(1)>0].index
+df = df.drop(df.index[df_index])
+
+#Supprimer les lignes qui contiennent des valeurs manquantes
+listwise_X_train = X_train.dropna()
 ```
 ### C) Suppression par colonne
 

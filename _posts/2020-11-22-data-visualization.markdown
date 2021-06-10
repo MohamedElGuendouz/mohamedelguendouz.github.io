@@ -12,7 +12,7 @@ img: business-5475660_1280.jpg
 ---
 
 
- In every project, the first step is to load data.  
+In every project, the first step is to load data.  
 To read the CSV files we are the pandas function `read_csv()` :
 
 
