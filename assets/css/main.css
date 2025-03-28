@@ -1330,27 +1330,46 @@ a.newer-posts:hover {
   padding: 10px;
 }
 
+.tags {
+  padding: 0;
+  margin: 1rem 0;
+}
+
 .tags li {
   display: inline-block;
-  margin: 5px;
+  margin: 0.2rem;
   list-style: none;
 }
 
 .tags li a {
   text-decoration: none;
-  color: #263959;
+  color: #2c3e50;
   display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid #ecf0f1;
-  background-color: #fafafa;
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
 }
 
 .tags li a:hover {
-  background-color: #ecf0f1;
+  background-color: #e9ecef;
+  color: #404fc1;
+  border-color: #dee2e6;
 }
+
+.tags li a:active {
+  background-color: #e2e6ea;
+}
+
+/* Pour les tags avec compteur (si utilisé dans Jekyll) */
+.tags li a .count {
+  color: #868e96;
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
+
 
 .tag-list span a {
   text-decoration: none;
