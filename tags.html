@@ -5,7 +5,6 @@ permalink: /tags/
 ---
 
 <section>
-  <div id="article-list">
   {% for tag_pair in site.tags %}
     {% assign tag_name = tag_pair[0] %}
     {% assign tag_posts = tag_pair[1] %}
@@ -15,7 +14,7 @@ permalink: /tags/
         <article class="post">  <!-- Utilisation de la classe "post" pour chaque article (comme sur la homepage) -->
           {% if post.img %}
             <a class="post-thumbnail" href="{{post.url | prepend: site.baseurl}}">  <!-- Suppression du style en ligne -->
-              <img src="{{ "/assets/img/" | prepend: site.baseurl | append : post.img}}" alt="{{ post.title }}"> <!-- Ajout de la balise <img> pour afficher l'image -->
+              <img src="{{ "/assets/img/" | prepend: site.baseurl | append : post.img}}" style="height: 100%;" alt="{{ post.title }}"> <!-- Ajout de la balise <img> pour afficher l'image -->
             </a>
           {% else %}
           {% endif %}
@@ -29,14 +28,11 @@ permalink: /tags/
       {% endfor %}
     </div>
   {% endfor %}
-</div>
-
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const tagFilters = document.querySelectorAll('.tag-filter');
       const tagArticleBlocks = document.querySelectorAll('.tag-articles');
-      const articleListContainer = document.getElementById('article-list');
 
       function filterArticlesByTag(tagName) {
         tagArticleBlocks.forEach(block => {
