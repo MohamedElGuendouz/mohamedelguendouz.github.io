@@ -4,33 +4,13 @@ title: Tags
 permalink: /tags/
 ---
 
-<section class="blog-tags">
-  <h1 id="tags">Tags</h1>
-
-  <p>Voici tous les tags utilisés sur ce site. Cliquez sur un tag pour filtrer les articles.</p>
-
-  <ul class="tags" id="tag-list">
-    {% capture tag_names %}
-      {% for tag in site.tags %}
-        {{ tag[0] }}
-      {% endfor %}
-    {% endcapture %}
-    {% assign sorted_tags = tag_names | split:',' | sort %}
-    {% for this_word in tag_words %}
-      <li>
-        <a href="{% if this_word %}#{{ this_word | cgi_escape }}{% endif %}" class="tag tag-filter" data-tag="{{ this_word | slugify }}">
-          {{ this_word }} <span class="tag-count">({{ site.tags[this_word].size }})</span>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-
+<section>
   <div id="article-list">
   {% for tag_pair in site.tags %}
     {% assign tag_name = tag_pair[0] %}
     {% assign tag_posts = tag_pair[1] %}
     <div class="tag-articles" data-tag-name="{{ tag_name | slugify }}">
-      <h2 id="{{ tag_name | cgi_escape }}" class="tag-articles-title">Articles tagués avec "{{ tag_name }}"</h2>  <!-- Ajout de la classe "tag-articles-title" pour le titre des tags -->
+      <h1 id="{{ tag_name | cgi_escape }}" class="tag-articles-title"> {{ tag_name }} </h1>  <!-- Ajout de la classe "tag-articles-title" pour le titre des tags -->
       {% for post in tag_posts %}
         <article class="post">  <!-- Utilisation de la classe "post" pour chaque article (comme sur la homepage) -->
           {% if post.img %}
