@@ -3,26 +3,74 @@ layout: main
 title: Tags
 permalink: /tags/
 ---
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = site_tags | split:',' | sort %}
 
-<section class="blog-tags">
-  <h1>Tags in Blog</h1>
-  <ul class="tags">
-<!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
-  {% for this_word in tag_words %}
-    <li ><a href="#{{ this_word | cgi_escape }}" class="tag">{{ this_word }} <span>({{ site.tags[this_word].size }})</span></a></li>
-  {% endfor %}
-  </ul>
-<!--cycles through tag list and creates subheader for each tag name...-->
-  {% for this_word in tag_words %}
-  <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
-<!--  lists all posts corresponding to specific tag...-->
-    {% for post in site.tags[this_word] %}{% if post.title != null %}
-    <div class="tag-list">
-        <span><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></span>
-        <small><span>| {{ post.date | date_to_string }}</span></small>
+<section>
+  <div id="article-list">
+  {% for tag_pair in site.tags %}
+    {% assign tag_name = tag_pair[0] %}
+    {% assign tag_posts = tag_pair[1] %}
+    <div class="tag-articles" data-tag-name="{{ tag_name | slugify }}">
+      <h1 id="{{ tag_name | cgi_escape }}" class="tag-articles-title"> {{ tag_name }} </h1>  <!-- Ajout de la classe "tag-articles-title" pour le titre des tags -->
+      {% for post in tag_posts %}
+        <article class="post">  <!-- Utilisation de la classe "post" pour chaque article (comme sur la homepage) -->
+          {% if post.img %}
+            <a class="post-thumbnail" href="{{post.url | prepend: site.baseurl}}">  <!-- Suppression du style en ligne -->
+              <img src="{{ "/assets/img/" | prepend: site.baseurl | append : post.img}}" alt="{{ post.title }}"> <!-- Ajout de la balise <img> pour afficher l'image -->
+            </a>
+          {% else %}
+          {% endif %}
+          <div class="post-content">
+            <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>  <!-- Utilisation de la classe "post-title" -->
+            <p>{{ post.content | strip_html | truncatewords: 15 }}</p>
+            <span class="post-date">last modified : {{post.date-last-modif | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;—&nbsp;</span>  <!-- Utilisation de la classe "post-date" -->
+            <span class="post-date">created: {{post.date | date: '%Y, %b %d'}}&nbsp;&nbsp;&nbsp;</span>  <!-- Utilisation de la classe "post-date" -->
+          </div>
+        </article>
+      {% endfor %}
     </div>
-    {% endif %}{% endfor %}
   {% endfor %}
+</div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tagFilters = document.querySelectorAll('.tag-filter');
+      const tagArticleBlocks = document.querySelectorAll('.tag-articles');
+      const articleListContainer = document.getElementById('article-list');
+
+      function filterArticlesByTag(tagName) {
+        tagArticleBlocks.forEach(block => {
+          if (block.dataset.tagName === tagName) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
+        });
+      }
+
+      tagFilters.forEach(filterLink => {
+        filterLink.addEventListener('click', function(event) {
+          event.preventDefault();
+          const clickedTag = this.dataset.tag;
+          filterArticlesByTag(clickedTag);
+        });
+      });
+
+      if (window.location.hash) {
+        const initialTagFromHash = window.location.hash.substring(1);
+        filterArticlesByTag(initialTagFromHash);
+      } else {
+        tagArticleBlocks.forEach(block => {
+          block.style.display = 'block';
+        });
+      }
+
+      window.addEventListener('hashchange', function() {
+        const tagFromHash = window.location.hash.substring(1);
+        filterArticlesByTag(tagFromHash);
+      });
+    });
+  </script>
+
+
 </section>

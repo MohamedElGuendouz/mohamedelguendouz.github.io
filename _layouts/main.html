@@ -16,32 +16,15 @@ layout: default
   {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
   {% assign tag_words = site_tags | split:',' | sort %}
 
-  <section class="">
-    <ul class="tags">
-  <!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
-    {% for this_word in tag_words %}
-      <li ><a href="{{ site.url }}/tags/#{{ this_word | cgi_escape }}" class="tag">{{ this_word }} <span>({{ site.tags[this_word].size }})</span></a></li>
-    {% endfor %}
-    </ul>
-  </section>
+
   <footer>
     <section class="contact">
-      <h3 class="contact-title">Contact me</h3>
+      <h3 class="contact-title">Contacts</h3>
       <ul>
-<!--    {% if site.social-twitter %}
-          <li><a href="https://twitter.com/{{ site.social-twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        {% else %}
-          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        {% endif %}
-        {% if site.social-facebook %}
-          <li><a href="https://facebook.com/{{ site.social-facebook }}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        {% else %}
-          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> -->
-        {% endif %}
         {% if site.social-github %}
           <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i class="fa fa-github"></i></a></li>
         {% else %}
-          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa ’fa-github" aria-hidden="true"></i></a></li>
         {% endif %}
         {% if site.social-linkedin %}
           <li class="linkedin"><a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
@@ -61,5 +44,14 @@ layout: default
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix">
+  <section class="">
+    <ul class="tags">
+      {% for this_word in tag_words %}
+        <li>
+          <a href="{{ site.url }}/tags/#{{ this_word | slugify }}" class="tag">{{ this_word }}<span class="tag-count">{{ site.tags[this_word].size }}</span></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
   {{ content }}
 </div>
