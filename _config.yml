@@ -1,35 +1,70 @@
-title: Mohamed El Guendouz
-description: >
-  Ingénieur en informatique et Systèmes d'Information
-permalink: ':title/'
-baseurl: "" 
-url: "https://mohamedelguendouz.github.io"
-site-twitter: 
+#-------------------------------
+# General Site Settings
 
-# Author Settings
-author: Mohamed El Guendouz
-author-img: profil.jfif
-about-author: Je suis un ingénieur en informatique terminant sa dernière année en alternance chez Banque PSA Finance.
-social-twitter: 
-social-facebook:
-social-github: MohamedElGuendouz
-social-linkedin: melg-0686aa151
-social-email: mohamed.elguendouz@outlook.fr
+title: El Guendouz Mohamed | Data Engineer Cloud
+description: Expert en ingénierie et architecture des données, je possède une solide expertise en plateformes cloud et technologies Big Data.  Je conçois des solutions data innovantes et performantes, incluant des architectures scalables et robustes, pour répondre à vos enjeux les plus complexes.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mohamedelguendouz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Disqus
-discus-identifier: mr-brown
 
-# Tracker
-analytics: G-42EV5L5LRG
+#-------------------------------
+# About Section
+author-name:   Mohamed El Guendouz
+author-avatar: profil.jpeg
 
-# Build Settings
+
+#-------------------------------
+# Contact links
+facebook:  https://facebook.com/ # Add your Facebook handle
+twitter:   https://twitter.com/ # Add your Facebook handle
+instagram: https://www.instagram.com/ # Add your Facebook handle
+pinterest: https://www.pinterest.com/ # Add your Facebook handle
+linkedin:  https://www.linkedin.com/in/melg-0686aa151/
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: El Guendouz Mohamed # Add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Instagram Feed
+instafeed: false # To enable the instafeed, use the value true. To turn off use the value false.
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Newsletter
+mailchimp: https://sibforms.com/serve/MUIFACMZeK_FUEqqhr3i6-M57WS0YOsBu6cbl5_yH0oUiD0fGFSqBNyBm1nA7tE2NSyEC6eUxf43L4MIG4dda5rpDJW0YncnjZ7WJR63qHJfAojPqcKpf2d7fa1vU_lolqkaJL10slY4gsfL76Ejve43JFH7q6sWHj0rL4qYx1Qn1qBTuqWSbuqxcK1EVJiT1LIdfp3MVdx2Pr6m
+# Pas utilisé
+#-------------------------------
+# Build settings
 markdown: kramdown
+permalink: ':title/'
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
-  - jemoji
+  - jekyll-sitemap
 
-paginate: 8
+paginate: 7
 paginate_path: "/page/:num"
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+#-------------------------------
+# Exclude from processing.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

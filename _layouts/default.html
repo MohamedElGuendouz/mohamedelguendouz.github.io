@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 {% include head.html %}
+
 <body>
 
-  <div class="wrapper">
-    {{ content }}
-  </div>
-  
-  {% include analytics.html %}
+  {% if site.google-analytics %}
+    {% include analytics.html %}
+  {% endif %}
+  {% include loader.html %}
+  {% include header.html %}
+
+      {{ content }}
+
+  {% include footer.html %}
+  {% include javascripts.html %}
+  {% include chat.html %}
+
 </body>
+
 </html>
