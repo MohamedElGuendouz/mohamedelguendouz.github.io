@@ -8,9 +8,8 @@ tags: [HDFS, MapReduce, YARN, Hive]
 comments: true
 sharing: true
 published: true
-img: Formation_01/main.png
+image: hadoop.png
 ---
-
 
 L'objectif de ce post va être de poser les bases de l'écosystème Hadoop afin d'avoir une vision claire des briques que contient la plateforme Hadoop.
 

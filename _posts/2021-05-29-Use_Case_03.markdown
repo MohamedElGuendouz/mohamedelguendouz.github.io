@@ -8,7 +8,7 @@ tags: [Java, Kafka, Scala]
 comments: true
 sharing: true
 published: true
-img: Use_Case_3/main.jpg
+image: apple_bourse.png
 ---
 
 L'objectif de ce cas d'utilisation est de créer un modèle ML pour prédire le prix de l'action APPL (Apple). Pour cela nous allons utiliser Apache Kafka et le langage Scala.

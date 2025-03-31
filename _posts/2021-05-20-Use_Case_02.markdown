@@ -8,7 +8,7 @@ tags: [Python, Pandas]
 comments: true
 sharing: true
 published: true
-img: Use_Case_2/main.jpg
+image: pandas_clean.png
 ---
 
 
