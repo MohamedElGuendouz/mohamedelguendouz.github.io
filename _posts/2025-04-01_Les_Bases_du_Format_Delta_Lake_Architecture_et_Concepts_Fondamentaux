@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Les Bases du Format Delta Lake : Architecture et Concepts Fondamentaux"
-date: 2025-04-01 19:00:00 +0200
-date-last-modif: 2025-04-01 19:55:00 +0200
+date: 2025-03-31 19:00:00 +0200
+date-last-modif: 2025-03-31 19:55:00 +0200
 description: "Delta Lake est un format de stockage open-source qui apporte des fonctionnalités de gestion des données aux lacs de données."
 tags: [Delta, PySpark]
 comments: true
