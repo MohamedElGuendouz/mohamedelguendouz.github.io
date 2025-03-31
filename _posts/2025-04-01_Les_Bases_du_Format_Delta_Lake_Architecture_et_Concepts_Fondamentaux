@@ -1,4 +1,15 @@
-# Les Bases du Format Delta Lake : Architecture et Concepts Fondamentaux
+---
+layout: post
+title: "Les Bases du Format Delta Lake : Architecture et Concepts Fondamentaux"
+date: 2025-04-01 19:00:00 +0200
+date-last-modif: 2025-04-01 19:55:00 +0200
+description: "Delta Lake est un format de stockage open-source qui apporte des fonctionnalités de gestion des données aux lacs de données."
+tags: [Delta, PySpark]
+comments: true
+sharing: true
+published: true
+image: delta_table.jpeg
+---
 
 Delta Lake est un format de stockage open-source qui apporte des fonctionnalités de gestion des données aux lacs de données. Il est conçu pour améliorer la fiabilité, la performance et la gestion des données dans des environnements de big data. Dans cet article, nous allons explorer l'architecture de Delta Lake ainsi que ses concepts fondamentaux.
 
