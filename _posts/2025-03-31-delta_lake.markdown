@@ -8,7 +8,7 @@ tags: [Delta, PySpark]
 comments: true
 sharing: true
 published: true
-image: https://www.databricks.com/sites/default/files/delta-lake-logo.png
+image: delta-lake-logo.png
 ---
 
 Delta Lake est un format de stockage open-source qui apporte des fonctionnalités de gestion des données aux lacs de données. Il est conçu pour améliorer la fiabilité, la performance et la gestion des données dans des environnements de big data. Dans cet article, nous allons explorer l'architecture de Delta Lake ainsi que ses concepts fondamentaux.
