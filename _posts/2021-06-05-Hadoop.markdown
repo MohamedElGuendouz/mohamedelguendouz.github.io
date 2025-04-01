@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hadoop"
+title: "Hadoop et son écosystème"
 date: 2021-06-05 12:00:00 +0200
 date-last-modif: 2021-06-06 19:55:00 +0200
-description: "Découvrir l'écosystème de Hadoop"
+description: Découvrir l'écosystème de Hadoop et tout son ecosystème.
 tags: [HDFS, MapReduce, YARN, Hive]
 comments: true
 sharing: true
@@ -268,3 +268,4 @@ https://java2blog.com/hadoop-hbase/
 https://datascientest.com/apache-hive
 https://www.lebigdata.fr/apache-zookeeper-tout-savoir-sur-le-systeme-de-coordination
 ```
+
