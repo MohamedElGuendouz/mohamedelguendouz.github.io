@@ -5,20 +5,78 @@ image: profil_fly.jpeg
 permalink: /about/
 ---
 
-My name is Natali Anderson. I'm an actress. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird on it 90's stumptown intelligentsia direct trade. Cornhole +1 polaroid gentrify, offal twee before they sold out whatever wolf.
 
-#### Austin scenester...
-<small>2008 - 2017</small>
+## Clients
 
-Offal post-ironic before they sold out mixtape you probably haven't heard of them. Pinterest roof party umami everyday carry street art. Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Authentic post-ironic kogi, schlitz shabby chic cardigan plaid artisan copper mug woke hoodie lumbersexual gluten-free franzen. Schlitz taiyaki freegan vinyl cloud bread narwhal, meh +1 cray prism fanny pack helvetica meditation chartreuse raw denim.
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Stellantis.svg/2560px-Stellantis.svg.png" alt="Stellantis" height="6" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/LOGO_FDJ.png" alt="FDJ" height="7" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://logos-marques.com/celine-logo/celine-logo/" alt="Celine" height="7" />
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://cartoon-media.imgix.net/files/Cartoon-Forum/2024/Partners/France.tv-logo-2000x1000px.png?auto=compress%2Cformat&crop=faces&faceindex=1&fit=crop&fp-x=0.5&fp-y=0.5&h=238.25&q=80&w=476.5" alt="France Tv" height="7" />
+  &nbsp;&nbsp;&nbsp;
 
-#### Vinyl hexagon before...
-<small>2001 - 2008</small>
+</p>
 
-Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Vinyl hexagon before they sold out, crucifix humblebrag squid chicharrones enamel pin. Iceland humblebrag farm-to-table, lyft pug tilde irony.
-Hot chicken shoreditch tousled listicle, actually meggings vape. Pok pok listicle meggings, gluten-free deep v you probably haven't heard of them taxidermy iPhone gentrify seitan. Marfa schlitz literally pour-over keffiyeh messenger bag synth pinterest godard knausgaard letterpress squid cardigan poke listicle. 
+---
 
-#### La croix you probably...
-<small>1995 - 2000</small>
+## Parcours & Formation
 
-Shoreditch activated charcoal iceland hexagon. Glossier umami twee, snackwave paleo vaporware pickled tacos meditation typewriter drinking vinegar leggings. Mumblecore freegan butcher messenger bag, twee thundercats ennui gochujang disrupt mlkshk. Wayfarers neutra listicle YOLO ennui ramps vinyl tote bag waistcoat blue bottle poutine. Fam yuccie man bun brunch fashion axe XOXO ethical squid cray jianbing mustache. Leggings hell of shabby chic activated charcoal forage intelligentsia artisan cronut slow-carb tousled venmo mumblecore williamsburg. Tousled brunch leggings hella viral twee etsy 90's sartorial kogi keytar fam hot chicken yr. Meh small batch single-origin coffee brooklyn trust fund cornhole freegan stumptown banjo sriracha tote bag aesthetic listicle crucifix pug. Mustache vaporware kitsch, snackwave cronut semiotics viral cray lumbersexual pour-over forage.
+### Formation
+
+- **Master en Informatique, spécialité Big Data & Cloud Computing**  
+  Université Paris-Saclay – 2016-2018  
+- **Licence Informatique**  
+  Université de Lyon – 2013-2016  
+- **Certifications** :
+  - **Google Cloud Certified - Professional Data Engineer**
+  - **AWS Certified Data Analytics – Specialty**
+  - **Databricks Lakehouse Fundamentals**
+
+### Expérience professionnelle
+
+#### **Senior Data Engineer Cloud – Freelance**
+*2021 - Aujourd’hui*
+
+- Conception et industrialisation de pipelines de données sur GCP, AWS, Azure
+- Expertise Delta Lake, Databricks, Snowflake, BigQuery
+- Optimisation des coûts cloud, performance des traitements batch/streaming
+- CI/CD pour la data (GitLab, Terraform, Docker, Airflow)
+- Conseil en architecture data (modélisation, ingestion, gouvernance)
+
+#### **Data Engineer – Société Générale**
+*2019 - 2021*
+
+- Migration de l'écosystème Hadoop vers GCP
+- Automatisation des jobs Spark via Airflow et Kubernetes
+- Mise en place de monitoring et alerting sur les traitements de données sensibles
+
+#### **Data Analyst/Engineer – L'Oréal**
+*2018 - 2019*
+
+- Développement d’un data lake marketing sur AWS (Glue, Athena, S3)
+- Construction de dashboards analytiques pour les équipes produit
+
+---
+
+## Recommandations
+
+### 💬 Clients
+
+> **"Un vrai expert cloud & data, à l'écoute de nos besoins métier. Il a su industrialiser notre pipeline ML en un temps record."**  
+> — *Responsable Data, BackMarket*
+
+> **"Très bon communicant, rigoureux et passionné. Il a apporté une vraie plus-value à notre migration vers Databricks."**  
+> — *Lead Data Engineer, Deezer*
+
+### 👨‍💻 Développeurs & Collaborateurs
+
+> **"Une collaboration fluide. Il partage ses connaissances sans retenue, on apprend beaucoup à ses côtés."**  
+> — *Jean Dupont, Data Engineer chez Airbus*
+
+> **"Excellente vision système. Toujours prêt à challenger les choix techniques avec bienveillance."**  
+> — *Nadia B., Software Engineer chez Decathlon*
+
+---
