@@ -1,21 +1,11 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import tailwindcss from "@tailwindcss/vite";
-import preact from "@astrojs/preact";
+import { defineConfig } from "astro/config"
+import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
-import icon from "astro-icon";
+import tailwind from "@astrojs/tailwind"
+import solidJs from "@astrojs/solid-js"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://efeele.dev",
-  integrations: [preact(), icon(), sitemap()],
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  markdown: {
-    shikiConfig: {
-      theme: 'github-dark'
-    },
-  },
-});
+  site: "https://astro-sphere-demo.vercel.app",
+  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
+})
