@@ -1,7 +1,18 @@
-
-# NeonMint Template Documentation
-
-![neonmint](https://github.com/user-attachments/assets/068da5e4-50c0-4134-99d3-8cb8ec867d9f)
+---
+layout: /src/layouts/MarkdownPostLayout.astro
+title: NeonMint Template Documentation
+author: Fernando López
+description: "NeonMint is a modern, minimalist template crafted for developers and digital creatives. Its dark-themed layout with mint green highlights delivers a sleek, elegant, and functional visual experience—perfect for portfolios, dashboards, or tech landing pages."
+image:
+  url: "/images/projects/neonmint.webp"
+  alt: "Screenshot of NeonMint, a modern and minimalist web template built with Astro and TailwindCSS. It displays various sections such as blog, portfolio, work experience, and Markdown guide, in both light and dark modes with mint green accents."
+pubDate: 2025-04-04
+tags:
+  [
+    "documentation", "portfolio", "web-development", "astro", "tailwindcss"
+  ]
+languages: ["astro", "javascript", "tailwind", "markdown"]
+---
 
 ## 🎯 Overview
 
@@ -63,7 +74,7 @@
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Astro v5.6.1
+- **Framework**: Astro v5.4.2
 - **UI Library**: Preact v10.26.2
 - **Styling**: TailwindCSS v4.0.8
 - **Icons**: astro-icon v1.1.5
